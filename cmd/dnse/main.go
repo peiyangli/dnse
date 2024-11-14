@@ -48,7 +48,7 @@ func main() {
 		case dns.TypeAAAA, dns.TypeA:
 			m.Answer = append(m.Answer, &dns.A{
 				Hdr: dns.RR_Header{Name: req.Question[0].Name, Rrtype: dns.TypeA, Class: dns.ClassINET, Ttl: 0},
-				A:   net.ParseIP("127.0.0.1"),
+				A:   net.ParseIP("10.10.1.99"),
 			})
 			m.Answer = append(m.Answer, &dns.TXT{
 				Hdr: dns.RR_Header{Name: req.Question[0].Name, Rrtype: dns.TypeTXT, Class: dns.ClassINET, Ttl: 0},
